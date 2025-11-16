@@ -1,11 +1,13 @@
+// @ts-nocheck
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Use relative paths for deployment to a subfolder on GitHub Pages
-  base: './',
+  // Base URL for deployment on GitHub Pages (repo is azoumed/ritage-al-oud)
+  // This makes absolute paths resolve to https://<user>.github.io/ritage-al-oud/
+  base: '/ritage-al-oud/',
   define: {
     // Vite does not expose process.env by default. This makes
     // process.env.API_KEY available in your client-side code,
