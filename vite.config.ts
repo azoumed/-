@@ -1,5 +1,15 @@
-// @ts-nocheck
+// Minimal ambient declaration for `process.env` so this file can be type-checked
+declare const process: {
+  env: {
+    API_KEY?: string
+    [key: string]: string | undefined
+  }
+}
+
+// The editor may not have `vite` types installed locally; silence missing-module errors
+// @ts-ignore: package may not be installed in the editor environment
 import { defineConfig } from 'vite'
+// @ts-ignore: package may not be installed in the editor environment
 import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
